@@ -1,0 +1,8 @@
+@each $direction, $pixels in $box-shadow-directions {
+
+    @each $strength, $color in $box-shadow-strengths {
+        .bs-#{$direction}-#{$strength} {
+            box-shadow: $pixels $color;
+        }
+    }
+}

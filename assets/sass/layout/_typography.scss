@@ -1,0 +1,44 @@
+html,
+body {
+    -webkit-font-smoothing: subpixel-antialiased;
+}
+body {
+    line-height: 1.5rem;
+}
+@for $i from 1 through 6 {
+    h#{$i} {
+        margin: 0;
+        padding: 0;
+        line-height: normal;
+    }
+}
+a {
+    text-decoration: none;
+    color: map-get($base-colors, blue);
+
+    &.underline {
+        text-decoration: underline;
+    }
+    
+    &.hover--underline {
+
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+}
+.text-right {
+    text-align: right !important;
+}
+.text-left {
+    text-align: left !important;
+}
+.text-center {
+    text-align: center !important;
+}
+.ws-pre-line {
+    white-space: pre-line;
+}
+.ws-normal {
+    white-space: normal;
+}

@@ -1,0 +1,48 @@
+@each $name, $size in $font-sizes {
+    .font-#{$name} {
+        font-size: $size;
+    }
+}
+
+@each $suffix, $spacing in $letter-spaces {
+    .letter-space-#{$suffix} {
+        letter-spacing: $spacing;
+    }
+}
+
+@each $suffix, $height in $line-heights {
+    .line-height-#{$suffix} {
+        line-height: $height;
+    }
+}
+
+.font-bold {
+    font-weight: $font-weight-bold;
+}
+.font-normal {
+    font-weight: $font-weight-normal;
+}
+.font-light {
+    font-weight: $font-weight-light;
+}
+.font-italic {
+    font-style: italic;
+}
+.font-underline {
+    text-decoration: underline;
+}
+.font-strikeout {
+    text-decoration: line-through;
+}
+.font-uppercase {
+    text-transform: uppercase;
+}
+.font-lowercase {
+    text-transform: lowercase;
+}
+.font-capitalize {
+    text-transform: capitalize;
+}
+.font-monospace {
+    font-family: monospace;
+}

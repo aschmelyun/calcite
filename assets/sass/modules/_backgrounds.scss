@@ -1,0 +1,88 @@
+@each $name, $color in $base-colors {
+    .bg-#{$name} {
+        background: $color;
+    }
+    .bg-#{$name}-light {
+        background: lighten($color, $lighten-color-percent);
+    }
+    .bg-#{$name}-dark {
+        background: darken($color, $darken-color-percent);
+    }
+    .hover--bg-#{$name} {
+
+        &:hover {
+            background: $color;
+        }
+    }
+    .hover--bg-#{$name}-light {
+
+        &:hover {
+            background: lighten($color, $lighten-color-percent);
+        }
+    }
+    .hover--bg-#{$name}-dark {
+
+        &:hover {
+            background: darken($color, $darken-color-percent);
+        }
+    }
+    .bg-color-#{$name} {
+        background-color: $color;
+    }
+    .bg-color-#{$name}-light {
+        background-color: lighten($color, $lighten-color-percent);
+    }
+    .bg-color-#{$name}-dark {
+        background-color: darken($color, $darken-color-percent);
+    }
+    .hover--bg-color-#{$name} {
+        
+        &:hover {
+            background-color: $color;
+        }
+    }
+    .hover--bg-color-#{$name}-light {
+
+        &:hover {
+            background-color: lighten($color, $lighten-color-percent);
+        }
+    }
+    .hover--bg-color-#{$name}-dark {
+
+        &:hover {
+            background-color: darken($color, $darken-color-percent);
+        }
+    }
+}
+@each $name, $color in $additional-colors {
+    .bg-#{$name} {
+        background: $color;
+    }
+    .hover--bg-#{$name} {
+
+        &:hover {
+            background: $color;
+        }
+    }
+    .bg-color-#{$name} {
+        background-color: $color;
+    }
+    .hover--bg-color-#{$name} {
+
+        &:hover {
+            background-color: $color;
+        }
+    }
+}
+
+@each $name, $position in $bg-positions {
+    .bg-position-#{$name} {
+        background-position: $position;
+    }
+}
+
+@each $name, $attachment in $bg-attachments {
+    .bg-attachment-#{$name} {
+        background-attachment: $attachment;
+    }
+}

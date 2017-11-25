@@ -1,0 +1,13 @@
+@each $style in $list-styles {
+    .ls-#{$style} {
+        list-style: $style;
+    }
+    .lst-#{$style} {
+        list-style-type: $style;
+    }
+}
+@each $position in $list-style-positions {
+    .lsp-#{$position} {
+        list-style-position: $position;
+    }
+}

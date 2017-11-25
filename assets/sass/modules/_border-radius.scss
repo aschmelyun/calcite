@@ -1,0 +1,11 @@
+@each $suffix, $radius in $radii {
+    .border-radius-#{$suffix} {
+        border-radius: $radius;
+    }
+}
+.border-radius-half {
+    border-radius: 50%;
+}
+.border-radius-quarter {
+    border-radius: 25%;
+}

@@ -1,0 +1,47 @@
+{
+  "name": "calcite",
+  "version": "0.1.0",
+  "description": "A front-end framework for rapid web development and prototyping",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "cross-env NODE_ENV=development webpack --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
+    "watch": "cross-env NODE_ENV=development webpack --watch --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
+    "production": "cross-env NODE_ENV=production webpack --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aschmelyun/calcite.git"
+  },
+  "keywords": [
+    "calcite",
+    "aschmelyun",
+    "framework",
+    "css",
+    "framework",
+    "sass",
+    "framework",
+    "grid",
+    "flexbox",
+    "flexbox",
+    "grid"
+  ],
+  "author": "aschmelyun",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/aschmelyun/calcite/issues"
+  },
+  "homepage": "https://github.com/aschmelyun/calcite#readme",
+  "devDependencies": {
+    "browser-sync": "^2.18.13",
+    "browser-sync-webpack-plugin": "^1.2.0",
+    "cross-env": "^5.1.0",
+    "flexboxgrid": "^6.3.1",
+    "font-awesome": "^4.7.0",
+    "laravel-mix": "^1.5.1",
+    "normalize.css": "^7.0.0"
+  },
+  "dependencies": {
+    "highlightjs": "^9.10.0"
+  }
+}

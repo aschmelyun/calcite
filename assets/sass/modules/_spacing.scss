@@ -1,0 +1,51 @@
+@each $suffix, $spacing in $margins {
+    .m-#{$suffix} {
+        margin: $spacing;
+    }
+    .mtb-#{$suffix} {
+        margin-top: $spacing;
+        margin-bottom: $spacing;
+    }
+    .mlr-#{$suffix} {
+        margin-left: $spacing;
+        margin-right: $spacing;
+    }
+    .mt-#{$suffix} {
+        margin-top: $spacing;
+    }
+    .mr-#{$suffix} {
+        margin-right: $spacing;
+    }
+    .mb-#{$suffix} {
+        margin-bottom: $spacing;
+    }
+    .ml-#{$suffix} {
+        margin-left: $spacing;
+    }
+}
+
+@each $suffix, $spacing in $paddings {
+    .p-#{$suffix} {
+        padding: $spacing;
+    }
+    .ptb-#{$suffix} {
+        padding-top: $spacing;
+        padding-bottom: $spacing;
+    }
+    .plr-#{$suffix} {
+        padding-left: $spacing;
+        padding-right: $spacing;
+    }
+    .pt-#{$suffix} {
+        padding-top: $spacing;
+    }
+    .pr-#{$suffix} {
+        padding-right: $spacing;
+    }
+    .pb-#{$suffix} {
+        padding-bottom: $spacing;
+    }
+    .pl-#{$suffix} {
+        padding-left: $spacing;
+    }
+}

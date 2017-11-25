@@ -1,0 +1,14 @@
+@each $suffix, $animation in $animations {
+    .anim-color-#{$suffix} {
+        transition: color $animation;
+    }
+    .anim-opacity-#{$suffix} {
+        transition: opacity $animation;
+    }
+    .anim-bg-#{$suffix} {
+        transition: background-color $animation;
+    }
+    .anim-all-#{$suffix} {
+        transition: all $animation;
+    }
+}

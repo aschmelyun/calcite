@@ -1,0 +1,928 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Calcite | A crystalline CSS toolkit for UI development</title>
+    <link rel="stylesheet" type="text/css" href="/dist/css/calcite.css">
+    <link rel="stylesheet" type="text/css" href="/node_modules/highlightjs/styles/github.css">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i,800|Lora:400,700" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="mobile-web-app-capable" content="yes">
+    <style>
+        body {
+            font-family: "Open Sans", sans-serif;
+        }
+        .logo {
+            font-size: 1.75rem;
+            color: #fff;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            display: flex;
+            align-items: center;
+            height: 100%;
+        }
+        .wrapper > .row {
+            margin: 0;
+        }
+        .hljs {
+            background: none;
+            padding: 0;
+        }
+        .font-lora {
+            font-family: "Lora", serif;
+            font-weight: 400;
+        }
+    </style>
+</head>
+<body class="bs-border-box">
+    <header class="header wrapper bg-red">
+        <div class="row">
+            <div class="col-sm-6">
+                <div class="logo">
+                    <span>Calcite</span>
+                    <span class="font-x-small font-normal color-barely-clear-white font-lowercase pt-3 ml-2">v0.1.0</span>
+                </div>
+            </div>
+            <nav class="col-sm-6 navbar">
+                <ul class="ls-none flex jc-flex-end ai-center mtb-2">
+                    <li><a href="#" class="color-barely-clear-white font-small hover--color-white">GitHub</a></li>
+                    <li class="ml-6"><a href="#" class="color-barely-clear-white font-small hover--color-white">Documentation</a></li>
+                    <li class="ml-4"><a href="#" class="inline-block bg-very-clear-white border-radius-1 color-barely-clear-white plr-4 ptb-2 font-small hover--bg-semi-clear-white hover--color-white">Download</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <div class="wrapper">
+        <div class="row">
+            <div class="col-sm-3">
+                <nav class="list font-x-small">
+                    <ul class="ls-none">
+                        <li><a class="font-bold color-dark-grey hover--color-red" href="#overview">Overview</a></li>
+                        <ul class="ls-none border-left-silver pl-3 ml-5 mt-1">
+                            <li><a href="#installation" class="color-dark-grey hover--color-red">Installation</a></li>
+                            <li><a href="#usage" class="color-dark-grey hover--color-red">Usage</a></li>
+                            <li><a href="#variables" class="color-dark-grey hover--color-red">Variables</a></li>
+                            <li><a href="#compiling-sass" class="color-dark-grey hover--color-red">Compiling Sass</a></li>
+                        </ul>
+                        <li class="mt-3"><a class="font-bold color-dark-grey hover--color-red" href="#layout">Layout</a></li>
+                        <ul class="ls-none border-left-silver pl-3 ml-5 mt-1">
+                            <li><a class="color-dark-grey hover--color-red" href="#grids">Grid</a></li>
+                            <li><a class="color-dark-grey hover--color-red" href="#typography">Typography</a></li>
+                            <li><a class="color-dark-grey hover--color-red" href="#media">Media</a></li>
+                        </ul>
+                        <li class="mt-3"><a class="font-bold color-dark-grey hover--color-red" href="#modules">Modules</a></li>
+                        <ul class="ls-none border-left-silver pl-3 ml-5 mt-1">
+                            <li><a class="color-dark-grey hover--color-red" href="#spacing">Spacing</a></li>
+                            <li><a class="color-dark-grey hover--color-red" href="#colors">Colors</a></li>
+                            <li><a class="color-dark-grey hover--color-red" href="#font-styles">Font Styles</a></li>
+                            <li><a class="color-dark-grey hover--color-red" href="#flexbox">Flexbox</a></li>
+                            <li><a class="color-dark-grey hover--color-red" href="#positioning">Positioning</a></li>
+                            <li><a class="color-dark-grey hover--color-red" href="#sizing">Sizing</a></li>
+                            <li><a class="color-dark-grey hover--color-red" href="#lists">Lists</a></li>
+                            <li><a class="color-dark-grey hover--color-red" href="#borders">Borders</a></li>
+                            <li><a class="color-dark-grey hover--color-red" href="#border-radius">Border Radius</a></li>
+                            <li><a class="color-dark-grey hover--color-red" href="#box-shadow">Box Shadow</a></li>
+                            <li><a class="color-dark-grey hover--color-red" href="#animations">Animations</a></li>
+                            <li><a class="color-dark-grey hover--color-red" href="#box-sizing">Box Sizing</a></li>
+                        </ul>
+                    </ul>
+                </nav>
+            </div>
+            <div class="col-sm-9 mt-2 color-dark-grey">
+                <h1 class="font-light" id="layout">Layout</h1>
+                <section class="section mt-6" id="grid">
+                    <h2 class="font-light pb-2 border-bottom-silver">Grid</h2>
+                    <p class="line-height-4 font-lora">Calcite comes with a grid module that helps you easily build out layouts with a syntax that's fairly universal throughout
+                        most modern front-end frameworks. It's a 100% flex-based grid that uses
+                        <a href="http://flexboxgrid.com" target="_blank">flexboxgrid</a> for the bulk of the styles and functionality.
+                        The bulk of browsers used regularly right now are compatible with flexbox. If you want to make this
+                        fully-compatible on older browsers like IE <11, I'd recommend a JS-powered polyfill
+                        (<a href="https://github.com/jonathantneal/flexibility" target="_blank">flexibility</a> is a good one).</p>
+                    <h3 class="font-light pb-2 mt-6 border-bottom-silver">Examples</h3>
+                    <pre class="ws-normal font-small m-0 ptb-3">
+                        <code class="html">
+                            &lt;div class=&quot;row&quot;&gt;<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&lt;div class=&quot;col-xs-6 col-md-3&quot;&gt;&lt;/div&gt;<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&lt;div class=&quot;col-xs-6&quot;&gt;&lt;/div&gt;<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&lt;div class=&quot;col-xs-12 col-md-3&quot;&gt;&lt;/div&gt;<br>
+                            &lt;/div&gt;
+                        </code>
+                    </pre>
+                    <div class="row">
+                        <div class="col-md-3 col-xs-6"><div class="p-2 font-small bg-silver border-radius-1 mb-3">&nbsp;</div></div>
+                        <div class="col-xs-6"><div class="p-2 font-small bg-silver border-radius-1 mb-3">&nbsp;</div></div>
+                        <div class="col-md-3 col-xs-12"><div class="p-2 font-small bg-silver border-radius-1 mb-3">&nbsp;</div></div>
+                    </div>
+                    <pre class="ws-normal font-small m-0 mt-6 ptb-3">
+                        <code class="html">
+                            &lt;div class=&quot;row&quot;&gt;<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&lt;div class=&quot;col-xs-12&quot;&gt;&lt;/div&gt;<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&lt;div class=&quot;col-xs-12 col-sm-6 col-lg-4&quot;&gt;&lt;/div&gt;<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&lt;div class=&quot;col-xs-12 col-md-6 col-lg-4 col-lg-offset-4&quot;&gt;&lt;/div&gt;<br>
+                            &lt;/div&gt;
+                        </code>
+                    </pre>
+                    <div class="row">
+                        <div class="col-xs-12"><div class="p-2 font-small bg-silver border-radius-1 mb-3">&nbsp;</div></div>
+                        <div class="col-xs-12 col-sm-6 col-lg-4"><div class="p-2 font-small bg-silver border-radius-1 mb-3">&nbsp;</div></div>
+                        <div class="col-xs-12 col-sm-6 col-lg-4 col-lg-offset-4"><div class="p-2 font-small bg-silver border-radius-1 mb-3">&nbsp;</div></div>
+                    </div>
+                    <pre class="ws-normal font-small m-0 mt-6 ptb-3">
+                        <code class="html">
+                            &lt;div class=&quot;row&quot;&gt;<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&lt;div class=&quot;col-xs-12&quot;&gt;<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;div class=&quot;row&quot;&gt;<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;div class=&quot;col-sm-9&quot;&gt;&lt;/div&gt;<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;div class=&quot;col-sm-3&quot;&gt;&lt;/div&gt;<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/div&gt;<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&lt;/div&gt;<br>
+                            &lt;/div&gt;
+                        </code>
+                    </pre>
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <div class="bg-silver border-radius-1 p-2">
+                                <div class="row">
+                                    <div class="col-sm-9"><div class="p-2 bg-grey border-radius-1">&nbsp;</div></div>
+                                    <div class="col-sm-3"><div class="p-2 bg-grey border-radius-1">&nbsp;</div></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section class="section mt-8" id="typography">
+                    <h2 class="font-light pb-2 border-bottom-silver">Typography</h2>
+                    <p class="font-lora">By default, Calcite uses Arial as the font family on all elements. This is of course customizable
+                        by changing the value in the <span class="color-red font-monospace">$font-family</span> variable present
+                        in base/_vars.scss. All headings and base text tags use the default browser font sizes and styles, with padding and margins
+                        stripped away. These can be adjusted with the <strong>p-</strong> and <strong>m-</strong> module classes.</p>
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <h1>h1 Heading Text</h1>
+                            <h2>h2 Heading Text</h2>
+                            <h3>h3 Heading Text</h3>
+                            <h4>h4 Heading Text</h4>
+                            <h5>h5 Heading Text</h5>
+                            <h6>h6 Heading Text</h6>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <p>This is a standard &lt;p&gt; tag with default text styling. <strong>&lt;strong&gt;</strong> and
+                                <em>&lt;em&gt;</em> tags work in this as well.</p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <ul>
+                                <li>Default</li>
+                                <li>Unordered</li>
+                                <li>List</li>
+                            </ul>
+                        </div>
+                        <div class="col-sm-6">
+                            <ol>
+                                <li>Default</li>
+                                <li>Ordered</li>
+                                <li>List</li>
+                            </ol>
+                        </div>
+                    </div>
+                </section>
+                <section class="section mt-8 mb-10" id="media">
+                    <h2 class="font-light mt-6 pb-2 border-bottom-silver">Media</h2>
+                    <p class="font-lora">There's a few default styles included to help wrangle in your media. For instance, &lt;img&gt; and
+                    &lt;video&gt; tags are set to <span class="font-monospace color-red">max-width: 100%;</span> in order to prevent them
+                    from overflowing their container elements. The rest of your customizations should be made through module classes.</p>
+                </section>
+                <h1 class="font-light" id="modules">Modules</h1>
+                <section class="section mt-6" id="spacing">
+                    <h2 class="font-light pb-2 border-bottom-silver">Spacing</h2>
+                    <p class="font-lora">Use these classes to add margins and padding around your elements. You can specify a specific direction,
+                    two opposing directions at once (e.g. up and down, left and right), or the entire element as a whole.</p>
+                    <h3 class="font-light pb-2 mt-6 border-bottom-silver">Prefixes</h3>
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <pre class="ws-normal font-small m-0 ptb-3">
+                                <code class="css">
+                                    .m- /* margin, all around */<br>
+                                    .mb- /* margin, bottom */<br>
+                                    .mt- /* margin, top */<br>
+                                    .mtb- /* margin, top and bottom */<br>
+                                    .ml- /* margin, left */<br>
+                                    .mr- /* margin, right */<br>
+                                    .mlr- /* margin, left and right */
+                                </code>
+                            </pre>
+                        </div>
+                        <div class="col-sm-6">
+                            <pre class="ws-normal font-small m-0 ptb-3">
+                                <code class="css">
+                                    .p- /* padding, all around */<br>
+                                    .pb- /* padding, bottom */<br>
+                                    .pt- /* padding, top */<br>
+                                    .ptb- /* padding, top and bottom */<br>
+                                    .pl- /* padding, left */<br>
+                                    .pr- /* padding, right */<br>
+                                    .plr- /* padding, left and right */
+                                </code>
+                            </pre>
+                        </div>
+                    </div>
+                    <h3 class="font-light pb-2 mt-6 border-bottom-silver">Amounts</h3>
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <pre class="ws-normal font-small m-0 ptb-3">
+                                <code class="css">
+                                    .m-0 /* margin, 0rem */<br>
+                                    .m-1 /* margin, 0.25rem */<br>
+                                    .m-2 /* margin, 0.5rem */<br>
+                                    .m-3 /* margin, 0.75rem */<br>
+                                    .m-4 /* margin, 1rem */<br>
+                                    .m-5 /* margin, 1.25rem */<br>
+                                    .m-6 /* margin, 1.5rem */<br>
+                                    .m-7 /* margin, 2rem */<br>
+                                    .m-8 /* margin, 2.5rem */<br>
+                                    .m-9 /* margin, 3rem */<br>
+                                    .m-10 /* margin, 4rem */<br>
+                                </code>
+                            </pre>
+                        </div>
+                        <div class="col-sm-6">
+                            <pre class="ws-normal font-small m-0 ptb-3">
+                                <code class="css">
+                                    .p-0 /* padding, 0rem */<br>
+                                    .p-1 /* padding, 0.25rem */<br>
+                                    .p-2 /* padding, 0.5rem */<br>
+                                    .p-3 /* padding, 0.75rem */<br>
+                                    .p-4 /* padding, 1rem */<br>
+                                    .p-5 /* padding, 1.25rem */<br>
+                                    .p-6 /* padding, 1.5rem */<br>
+                                    .p-7 /* padding, 2rem */<br>
+                                    .p-8 /* padding, 2.5rem */<br>
+                                    .p-9 /* padding, 3rem */<br>
+                                    .p-10 /* padding, 4rem */<br>
+                                </code>
+                            </pre>
+                        </div>
+                    </div>
+                    <h3 class="font-light pb-2 mt-6 border-bottom-silver">Examples</h3>
+                    <pre class="ws-normal font-small m-0 ptb-3">
+                        <code class="html">
+                            &lt;div class=&quot;box p-2&quot;&gt;<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&lt;div class=&quot;mt-4 p-2&quot;&gt;Hello there&lt;/div&gt;<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&lt;div class=&quot;mt-4 p-2&quot;&gt;How are you today?&lt;/div&gt;<br>
+                            &lt;/div&gt;
+                        </code>
+                    </pre>
+                    <div class="box p-2 border-silver">
+                        <div class="mt-4 p-2 font-small border-grey">Hello there</div>
+                        <div class="mt-4 p-2 font-small border-grey">How are you today?</div>
+                    </div>
+                </section>
+                <section class="section mt-8" id="colors">
+                    <h2 class="font-light pb-2 border-bottom-silver">Colors</h2>
+                    <p class="font-lora">Calcite uses a base color palette courtesy of <a href="http://clrs.cc/" target="_blank">clrs.cc</a>
+                        with a few white and black opacity colors added in for a little extra variety. In addition, each color
+                        has a <strong>-light</strong> and <strong>-dark</strong> counterpart that make things like button and link hover
+                        states or anything requiring slight color modifications easier.</p>
+                    <div class="row text-center">
+                        <div class="col-sm-4">
+                            <div class="ptb-1">
+                                <div class="inline-block mlr-1 width-fixed-4 height-fixed-4 border-radius-half bg-navy"></div>
+                                <div class="inline-block mlr-1 width-fixed-4 height-fixed-4 border-radius-half bg-navy-light"></div>
+                                <div class="inline-block mlr-1 width-fixed-4 height-fixed-4 border-radius-half bg-navy-dark"></div>
+                            </div>
+                            <div class="ptb-1">
+                                <div class="inline-block mlr-1 width-fixed-4 height-fixed-4 border-radius-half bg-blue"></div>
+                                <div class="inline-block mlr-1 width-fixed-4 height-fixed-4 border-radius-half bg-blue-light"></div>
+                                <div class="inline-block mlr-1 width-fixed-4 height-fixed-4 border-radius-half bg-blue-dark"></div>
+                            </div>
+                            <div class="ptb-1">
+                                <div class="inline-block mlr-1 width-fixed-4 height-fixed-4 border-radius-half bg-aqua"></div>
+                                <div class="inline-block mlr-1 width-fixed-4 height-fixed-4 border-radius-half bg-aqua-light"></div>
+                                <div class="inline-block mlr-1 width-fixed-4 height-fixed-4 border-radius-half bg-aqua-dark"></div>
+                            </div>
+                            <div class="ptb-1">
+                                <div class="inline-block mlr-1 width-fixed-4 height-fixed-4 border-radius-half bg-teal"></div>
+                                <div class="inline-block mlr-1 width-fixed-4 height-fixed-4 border-radius-half bg-teal-light"></div>
+                                <div class="inline-block mlr-1 width-fixed-4 height-fixed-4 border-radius-half bg-teal-dark"></div>
+                            </div>
+                            <div class="ptb-1">
+                                <div class="inline-block mlr-1 width-fixed-4 height-fixed-4 border-radius-half bg-olive"></div>
+                                <div class="inline-block mlr-1 width-fixed-4 height-fixed-4 border-radius-half bg-olive-light"></div>
+                                <div class="inline-block mlr-1 width-fixed-4 height-fixed-4 border-radius-half bg-olive-dark"></div>
+                            </div>
+                        </div>
+                        <div class="col-sm-4">
+                            <div class="ptb-1">
+                                <div class="inline-block mlr-1 width-fixed-4 height-fixed-4 border-radius-half bg-green"></div>
+                                <div class="inline-block mlr-1 width-fixed-4 height-fixed-4 border-radius-half bg-green-light"></div>
+                                <div class="inline-block mlr-1 width-fixed-4 height-fixed-4 border-radius-half bg-green-dark"></div>
+                            </div>
+                            <div class="ptb-1">
+                                <div class="inline-block mlr-1 width-fixed-4 height-fixed-4 border-radius-half bg-lime"></div>
+                                <div class="inline-block mlr-1 width-fixed-4 height-fixed-4 border-radius-half bg-lime-light"></div>
+                                <div class="inline-block mlr-1 width-fixed-4 height-fixed-4 border-radius-half bg-lime-dark"></div>
+                            </div>
+                            <div class="ptb-1">
+                                <div class="inline-block mlr-1 width-fixed-4 height-fixed-4 border-radius-half bg-yellow"></div>
+                                <div class="inline-block mlr-1 width-fixed-4 height-fixed-4 border-radius-half bg-yellow-light"></div>
+                                <div class="inline-block mlr-1 width-fixed-4 height-fixed-4 border-radius-half bg-yellow-dark"></div>
+                            </div>
+                            <div class="ptb-1">
+                                <div class="inline-block mlr-1 width-fixed-4 height-fixed-4 border-radius-half bg-orange"></div>
+                                <div class="inline-block mlr-1 width-fixed-4 height-fixed-4 border-radius-half bg-orange-light"></div>
+                                <div class="inline-block mlr-1 width-fixed-4 height-fixed-4 border-radius-half bg-orange-dark"></div>
+                            </div>
+                            <div class="ptb-1">
+                                <div class="inline-block mlr-1 width-fixed-4 height-fixed-4 border-radius-half bg-red"></div>
+                                <div class="inline-block mlr-1 width-fixed-4 height-fixed-4 border-radius-half bg-red-light"></div>
+                                <div class="inline-block mlr-1 width-fixed-4 height-fixed-4 border-radius-half bg-red-dark"></div>
+                            </div>
+                        </div>
+                        <div class="col-sm-4">
+                            <div class="ptb-1">
+                                <div class="inline-block mlr-1 width-fixed-4 height-fixed-4 border-radius-half bg-maroon"></div>
+                                <div class="inline-block mlr-1 width-fixed-4 height-fixed-4 border-radius-half bg-maroon-light"></div>
+                                <div class="inline-block mlr-1 width-fixed-4 height-fixed-4 border-radius-half bg-maroon-dark"></div>
+                            </div>
+                            <div class="ptb-1">
+                                <div class="inline-block mlr-1 width-fixed-4 height-fixed-4 border-radius-half bg-fuchsia"></div>
+                                <div class="inline-block mlr-1 width-fixed-4 height-fixed-4 border-radius-half bg-fuchsia-light"></div>
+                                <div class="inline-block mlr-1 width-fixed-4 height-fixed-4 border-radius-half bg-fuchsia-dark"></div>
+                            </div>
+                            <div class="ptb-1">
+                                <div class="inline-block mlr-1 width-fixed-4 height-fixed-4 border-radius-half bg-purple"></div>
+                                <div class="inline-block mlr-1 width-fixed-4 height-fixed-4 border-radius-half bg-purple-light"></div>
+                                <div class="inline-block mlr-1 width-fixed-4 height-fixed-4 border-radius-half bg-purple-dark"></div>
+                            </div>
+                            <div class="ptb-1">
+                                <div class="inline-block mlr-1 width-fixed-4 height-fixed-4 border-radius-half bg-barely-clear-black"></div>
+                                <div class="inline-block mlr-1 width-fixed-4 height-fixed-4 border-radius-half bg-half-clear-black"></div>
+                                <div class="inline-block mlr-1 width-fixed-4 height-fixed-4 border-radius-half bg-semi-clear-black"></div>
+                                <div class="inline-block mlr-1 width-fixed-4 height-fixed-4 border-radius-half bg-very-clear-black"></div>
+                            </div>
+                            <div class="ptb-1 bg-black border-radius-2 line-height-1">
+                                <div class="inline-block mlr-1 width-fixed-4 height-fixed-4 border-radius-half bg-barely-clear-white"></div>
+                                <div class="inline-block mlr-1 width-fixed-4 height-fixed-4 border-radius-half bg-half-clear-white"></div>
+                                <div class="inline-block mlr-1 width-fixed-4 height-fixed-4 border-radius-half bg-semi-clear-white"></div>
+                                <div class="inline-block mlr-1 width-fixed-4 height-fixed-4 border-radius-half bg-very-clear-white"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <h3 class="font-light pb-2 mt-6 border-bottom-silver">Examples</h3>
+                    <pre class="ws-normal font-small m-0 ptb-3">
+                        <code class="html">
+                            &lt;a href="#" class=&quot;inline-block bg-blue hover--bg-blue-dark color-white&quot;&gt;Click Me&lt;/a&gt;
+                        </code>
+                    </pre>
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <a href="#" class="inline-block ptb-2 plr-6 border-radius-1 bg-blue hover--bg-blue-dark color-white font-small">Click Me</a>
+                        </div>
+                    </div>
+                    <pre class="ws-normal font-small m-0 mt-8 ptb-3">
+                        <code class="html">
+                            Color me &lt;span class=&quot;color-orange&quot;&gt;orange&lt;/span&gt; or &lt;span class="color-teal"&gt;teal&lt;/span&gt;.
+                        </code>
+                    </pre>
+                    <div class="font-small">
+                        Color me <span class="color-orange">orange</span> or <span class="color-teal">teal</span>.
+                    </div>
+                </section>
+                <section class="section mt-8" id="font-styles">
+                    <h2 class="font-light pb-2 border-bottom-silver">Font Styles</h2>
+                    <p class="font-lora">Included in this module are a few classes that you can use to modify the  
+                        weight, style, and decoration of text contained within any element. 
+                    </p>
+                    <h3 class="font-light pb-2 mt-6 border-bottom-silver">All Classes</h3>
+                    <pre class="ws-normal font-small m-0 ptb-3">
+                        <code class="css">
+                            .font-left &nbsp;&nbsp;&nbsp;&nbsp;/* text-align: left; */<br>
+                            .font-center &nbsp;&nbsp;/* text-align: center; */<br>
+                            .font-right &nbsp;&nbsp;&nbsp;/* text-align: right; */<br>
+                            .font-underline &nbsp;/* text-decoration: underline; */<br>
+                            .font-strikeout &nbsp;/* text-decoration: line-through; */<br>
+                            .font-uppercase &nbsp;/* text-transform: uppercase; */<br>
+                            .font-lowercase &nbsp;/* text-transform: lowercase; */<br>
+                            .font-capitalize /* text-transform: capitalize; */<br>
+                            .font-light &nbsp;/* font-weight: $font-weight-light; (300) */<br>
+                            .font-normal /* font-weight: $font-weight-normal; (400) */<br>
+                            .font-bold &nbsp;&nbsp;/* font-weight: $font-weight-bold; (700) */
+                        </code>
+                    </pre>
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <pre class="ws-normal font-small m-0 ptb-3">
+                                <code class="css">
+                                    .font-x-small /* font-size: 0.75rem; */<br>
+                                    .font-small &nbsp;&nbsp;/* font-size: 0.88rem; */<br>
+                                    .font-regular /* font-size: 1rem; */<br>
+                                    .font-large &nbsp;&nbsp;/* font-size: 1.25rem; */<br>
+                                    .font-x-large /* font-size: 1.5rem; */
+                                </code>
+                            </pre>
+                            <pre class="ws-normal font-small m-0 ptb-3">
+                                <code class="css">
+                                    .letter-space-0 /* letter-spacing: 0px; */<br>
+                                    .letter-space-1 /* letter-spacing: 0.5px; */<br>
+                                    .letter-space-2 /* letter-spacing: 1px; */<br>
+                                    .letter-space-3 /* letter-spacing: 1.5px; */<br>
+                                    .letter-space-4 /* letter-spacing: 2px; */<br>
+                                    .letter-space-5 /* letter-spacing: 2.5px; */<br>
+                                    .letter-space-6 /* letter-spacing: 3px; */
+                                </code>
+                            </pre>
+                        </div>
+                        <div class="col-sm-6">
+                            <pre class="ws-normal font-small m-0 ptb-3">
+                                <code class="css">
+                                    .line-height-0 /* line-height: 0rem; */<br>
+                                    .line-height-1 /* line-height: 1rem; */<br>
+                                    .line-height-2 /* line-height: 1.25rem; */<br>
+                                    .line-height-3 /* line-height: 1.5rem; */<br>
+                                    .line-height-4 /* line-height: 1.75rem; */<br>
+                                    .line-height-5 /* line-height: 2rem; */<br>
+                                    .line-height-6 /* line-height: 2.5rem; */<br>
+                                    .line-height-tiny &nbsp;&nbsp;/* line-height: 0.5rem; */<br>
+                                    .line-height-normal /* line-height: normal; */<br>
+                                    .line-height-huge &nbsp;&nbsp;/* line-height: 3rem; */
+                                </code>
+                            </pre>
+                        </div>
+                    </div>
+                    <h3 class="font-light pb-2 mt-6 border-bottom-silver">Examples</h3>
+                    <pre class="ws-normal font-small m-0 ptb-3">
+                        <code class="html">
+                            &lt;p&gt;You can have &lt;span class="font-x-large font-bold font-uppercase"&gt;big, bold, all-caps&lt;/span&gt; text 
+                            or how about &lt;span class="font-small font-underline"&gt;small, underlined&lt;/span&gt; text? Maybe you'd  
+                            like something with a &lt;span class="letter-space-4 font-light"&gt;spaced out appearance&lt;/span&gt;&lt;/p&gt;
+                        </code>
+                    </pre>
+                    <div class="mt-4">
+                        You can have <span class="font-x-large font-bold font-uppercase">big, bold, all-caps</span> text 
+                        or how about <span class="font-small font-underline">small, underlined</span> text? Maybe you'd like 
+                        something with a <span class="letter-space-4 font-light">spaced out appearance</span>.
+                    </div>
+                </section>
+                <section class="section mt-8" id="flexbox">
+                    <h2 class="font-light pb-2 border-bottom-silver">Flexbox</h2>
+                    <p class="font-lora">Flex layouts are one of the best ways to properly size and align 
+                        elements while maintaining compatibility with all modern browsers (and in most cases, IE 11). 
+                        To get started, all you need to do is give your parent element a class of 
+                        <span class="font-monospace color-red">.flex</span> and every direct child under that container will be laid out 
+                        using flex display.</p>
+                    <p class="font-lora">Both the parent and the children elements can be modified with some of the classes below.
+                    </p>
+                    <h3 class="font-light pb-2 mt-6 border-bottom-silver">Class Explanations</h3>
+                    <pre class="ws-normal font-small m-0 ptb-3">
+                        <code class="css">
+                            /* flex-direction */<br>
+                            .fd-{row|row-reverse|column|column-reverse}<br><br>
+                            /* flex-wrap */<br>
+                            .fw-{nowrap|wrap|wrap-reverse}<br><br>
+                            /* justify-content */<br>
+                            .jc-{flex-start|flex-end|center|space-between|space-around|space-evenly}<br><br>
+                            /* align-items */<br>
+                            .ai-{flex-start|flex-end|center|baseline|stretch}<br><br>
+                            /* align-content */<br>
+                            .ac-{flex-start|flex-end|center|space-between|space-around|stretch}<br><br>
+                            .order-{1-12} &nbsp;&nbsp;/* order: # */<br>
+                            .grow-{1-12} &nbsp;&nbsp;&nbsp;/* grow: # */<br>
+                            .shrink-{1-12} &nbsp;/* shrink: # */<br>
+                            .flex-{1-12} &nbsp;&nbsp;&nbsp;/* flex: # */
+                        </code>
+                    </pre>
+                    <h3 class="font-light pb-2 mt-6 border-bottom-silver">Examples</h3>
+                    <pre class="ws-normal font-small m-0 ptb-3">
+                        <code class="html">
+                            &lt;div class=&quot;flex fd-row&quot;&gt;<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&lt;div class=&quot;flex-1 ptb-2 plr-4 mr-2&quot;&gt;Item 1&lt;/div&gt;<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&lt;div class=&quot;flex-1 ptb-2 plr-4 mr-2&quot;&gt;Item 2&lt;/div&gt;<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&lt;div class=&quot;flex-1 ptb-2 plr-4 mr-2&quot;&gt;Item 3&lt;/div&gt;<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&lt;div class=&quot;flex-1 ptb-2 plr-4&quot;&gt;Item 4&lt;/div&gt;<br>
+                            &lt;/div&gt;
+                        </code>
+                    </pre>
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <div class="flex fd-row">
+                                <div class="bg-silver flex-1 ptb-2 plr-4 mr-2">Item 1</div>
+                                <div class="bg-silver flex-1 ptb-2 plr-4 mr-2">Item 2</div>
+                                <div class="bg-silver flex-1 ptb-2 plr-4 mr-2">Item 3</div>
+                                <div class="bg-silver flex-1 ptb-2 plr-4">Item 4</div>
+                            </div>
+                        </div>
+                    </div>
+                    <pre class="ws-normal font-small m-0 mt-8 ptb-3">
+                        <code class="html">
+                            &lt;div class=&quot;flex fd-row-reverse&quot;&gt;<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&lt;div class=&quot;flex-1 ptb-2 plr-4&quot;&gt;Item 1&lt;/div&gt;<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&lt;div class=&quot;flex-1 ptb-2 plr-4 mr-2&quot;&gt;Item 2&lt;/div&gt;<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&lt;div class=&quot;flex-2 ptb-2 plr-4 mr-2&quot;&gt;Item 3&lt;/div&gt;<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&lt;div class=&quot;flex-2 ptb-2 plr-4 mr-2&quot;&gt;Item 4&lt;/div&gt;<br>
+                            &lt;/div&gt;
+                        </code>
+                    </pre>
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <div class="flex fd-row-reverse">
+                                <div class="bg-silver flex-1 ptb-2 plr-4">Item 1</div>
+                                <div class="bg-silver flex-1 ptb-2 plr-4 mr-2">Item 2</div>
+                                <div class="bg-silver flex-2 ptb-2 plr-4 mr-2">Item 3</div>
+                                <div class="bg-silver flex-2 ptb-2 plr-4 mr-2">Item 4</div>
+                            </div>
+                        </div>
+                    </div>
+                    <pre class="ws-normal font-small m-0 mt-8 ptb-3">
+                        <code class="html">
+                            &lt;div class=&quot;flex fd-row jc-center ai-center&quot;&gt;<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&lt;div class=&quot;flex-1 ptb-2 plr-4 mr-2&quot;&gt;Item 1&lt;/div&gt;<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&lt;div class=&quot;flex-2 ptb-8 plr-4 mr-2&quot;&gt;Item 2&lt;/div&gt;<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&lt;div class=&quot;flex-1 ptb-2 plr-4&quot;&gt;Item 3&lt;/div&gt;<br>
+                            &lt;/div&gt;
+                        </code>
+                    </pre>
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <div class="flex fd-row jc-center ai-center">
+                                <div class="bg-silver flex-1 ptb-2 plr-4 mr-2">Item 1</div>
+                                <div class="bg-silver flex-2 ptb-8 plr-4 mr-2">Item 2</div>
+                                <div class="bg-silver flex-1 ptb-2 plr-4">Item 3</div>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="font-lora mt-8">
+                        For more examples or in-depth info on flex layouts, <a href="#">this article</a> is a great resource.
+                    </p>
+                </section>
+                <section class="section mt-8" id="positioning">
+                    <h2 class="font-light pb-2 border-bottom-silver">Positioning</h2>
+                    <p class="font-lora">This area is pretty simple and self-explanatory. Below you'll find a list of 
+                        classes that you can use to modify the positioning and display of elements on your site.
+                    </p>
+                    <h3 class="font-light pb-2 mt-6 border-bottom-silver">Classes List</h3>
+                    <pre class="ws-normal font-small m-0 ptb-3">
+                        <code class="css">
+                            .inline /* display: inline; */<br>
+                            .block /* display: block; */<br>
+                            .inline-block /* display: inline-block; */<br>
+                            .float-left /* float: left; */<br>
+                            .float-right /* float: right; */<br><br>
+                            /* a clearfix class that uses an :after display: table pseudo-element */<br>
+                            .clearfix<br><br>
+                            /* position: modifier */<br>
+                            .pos-{absolute|fixed|relative|static} <br><br>
+                            /* top|left|right|bottom: modifiers (ex: .pos-left-0 = left: 0;) */<br>
+                            .pos-{top|left|right|bottom}-{1-8}
+                        </code>
+                    </pre>
+                </section>
+                <section class="section mt-8" id="sizing">
+                    <h2 class="font-light pb-2 border-bottom-silver">Sizing</h2>
+                    <p class="font-lora">Calcite has two different types of sizing classes that can be used to modify 
+                        the of elements. One is based on fixed sizes (through a gradual step up of rem amounts), 
+                        while the other is percentage-based and depends on the size of the parent element. You'll find the entire 
+                        list of classes as well as some examples below.
+                    </p>
+                    <h3 class="font-light pb-2 mt-6 border-bottom-silver">Classes List</h3>
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <pre class="ws-normal font-small m-0 ptb-3">
+                                <code class="css">
+                                    /* width: percentage of parent element */<br>
+                                    .width-{5-100 (intervals of 5)}<br><br>
+                                    /* height: percentage of parent element */<br>
+                                    .height-{5-100 (intervals of 5)}<br><br>
+                                    /* additionally, each quarter percent has an alias */<br>
+                                    .width-{quarter|half|three-quarters|full}<br>
+                                    .height-{quarter|half|three-quarters|full}<br><br>
+                                </code>
+                            </pre>
+                        </div>
+                        <div class="col-sm-6">
+                            <pre class="ws-normal font-small m-0 ptb-3">
+                                <code class="css">
+                                    .{width|height}-fixed-1 &nbsp;/* 0.5rem */<br>
+                                    .{width|height}-fixed-2 &nbsp;/* 1rem */<br>
+                                    .{width|height}-fixed-3 &nbsp;/* 1.5rem */<br>
+                                    .{width|height}-fixed-4 &nbsp;/* 2rem */<br>
+                                    .{width|height}-fixed-5 &nbsp;/* 2.5rem */<br>
+                                    .{width|height}-fixed-6 &nbsp;/* 3rem */<br>
+                                    .{width|height}-fixed-7 &nbsp;/* 3.5rem */<br>
+                                    .{width|height}-fixed-8 &nbsp;/* 4rem */<br>
+                                    .{width|height}-fixed-9 &nbsp;/* 4.5rem */<br>
+                                    .{width|height}-fixed-10 /* 5rem */<br>
+                                </code>
+                            </pre>
+                        </div>
+                    </div>
+                    <h3 class="font-light pb-2 mt-6 border-bottom-silver">Examples</h3>
+                    <pre class="ws-normal font-small m-0 ptb-3">
+                        <code class="html">
+                            &lt;div class=&quot;height-fixed-8 p-2&quot;&gt;<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&lt;div class=&quot;width-half height-60&quot;&gt;&lt;/div&gt;<br>
+                            &lt;/div&gt;
+                        </code>
+                    </pre>
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <div class="box height-fixed-8 p-2 bg-silver">
+                                <div class="width-half height-60 bg-grey font-small"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <pre class="ws-normal font-small m-0 mt-8 ptb-3">
+                        <code class="html">
+                            &lt;div class=&quot;width-25 p-2&quot;&gt;<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&lt;div class=&quot;width-full height-fixed-7 pos-relative p-2&quot;&gt;<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;div class=&quot;width-full height-full&quot;&gt;&lt;/div&gt;<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&lt;/div&gt;<br>
+                            &lt;/div&gt;
+                        </code>
+                    </pre>
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <div class="box width-25 bg-silver p-2">
+                                <div class="width-full height-fixed-7 pos-relative bg-grey p-2">
+                                    <div class="width-full height-full bg-dark-grey"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section class="section mt-8" id="lists">
+                    <h2 class="font-light pb-2 border-bottom-silver">Lists</h2>
+                    <p class="font-lora">Because of the low-level utility aspect of Calcite, lists elements don't come 
+                        pre-styled out of the box to look different than natively rendered. However, we include a few 
+                        classes that can help you adjust the way your lists are styled as a whole. Individual list items 
+                        should be styled with standard modifiers found throughout the rest of these docs.
+                    </p>
+                    <h3 class="font-light pb-2 mt-6 border-bottom-silver">Classes</h3>
+                    <pre class="ws-normal font-small m-0 ptb-3">
+                        <code class="css">
+                            /* list-style: {style} */<br>
+                            /* choose between disc, circle, square, none, decimal, upper-alpha, lower-alpha, upper-roman, or lower-roman */<br>
+                            .ls-{style}<br><br>
+                            /* list-style-type: {style} */<br>
+                            /* choose between the same styles above */<br>
+                            .lst-{style}<br><br>
+                            /* list-style-position: {inside|outside} */<br>
+                            .lsp-{inside|outside}
+                        </code>
+                    </pre>
+                    <h3 class="font-light pb-2 mt-6 border-bottom-silver">Examples</h3>
+                    <pre class="ws-normal font-small m-0 ptb-3">
+                        <code class="html">
+                            &lt;ul class=&quot;lst-square lsp-inside m-0 p-0&quot;&gt;<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&lt;li&gt;Item One&lt;/li&gt;<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&lt;li&gt;Item Two&lt;/li&gt;<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&lt;li&gt;Item Three&lt;/li&gt;<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&lt;li&gt;Item Four&lt;/li&gt;<br>
+                            &lt;/ul&gt;
+                        </code>
+                    </pre>
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <ul class="lst-square lsp-inside m-0 p-0">
+                                <li>Item One</li>
+                                <li>Item Two</li>
+                                <li>Item Three</li>
+                                <li>Item Four</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <pre class="ws-normal font-small m-0 mt-8 ptb-3">
+                        <code class="html">
+                            &lt;ol class=&quot;ls-lower-alpha m-0 p-0 pl-4&quot;&gt;<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&lt;li&gt;Item One&lt;/li&gt;<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&lt;li&gt;Item Two&lt;/li&gt;<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&lt;li&gt;Item Three&lt;/li&gt;<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&lt;li&gt;Item Four&lt;/li&gt;<br>
+                            &lt;/ol&gt;
+                        </code>
+                    </pre>
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <ol class="ls-lower-alpha m-0 p-0 pl-4">
+                                <li>Item One</li>
+                                <li>Item Two</li>
+                                <li>Item Three</li>
+                                <li>Item Four</li>
+                            </ol>
+                        </div>
+                    </div>
+                </section>
+                <section class="section mt-8" id="borders">
+                    <h2 class="font-light pb-2 border-bottom-silver">Borders</h2>
+                    <p class="font-lora">Here you'll find classes that you can use to both add and adjust borders 
+                        on elements throughout your site. To start off, the base for all of these is the 
+                        <span class="font-monospace color-red">.border-{color}</span> class. 
+                        This will add a border 1px thick on all sides of the element with the color specified. If you 
+                        want to specify a certain direction, you should instead use 
+                        <span class="font-monospace color-red">.border-{direction}-{color}</span>, which will again add 
+                        a 1px solid border to your element, but just in the direction you gave. If you want to change the 
+                        width or style of the border, add in an additional modifier class.
+                    </p>
+                    <p class="font-lora">
+                        Check out the complete list of classes below.
+                    </p>
+                    <h3 class="font-light pb-2 mt-6 border-bottom-silver">Class List</h3>
+                    <pre class="ws-normal font-small m-0 ptb-3">
+                        <code class="css">
+                            /* 1px border on all sides of an element with a specified color */<br>
+                            .border-{color}<br><br>
+                            /* 1px border in a specific direction with a specified color */<br>
+                            .border-{top|left|right|bottom}-{color}<br><br>
+                            /* adjust width of border between 0-6px */<br>
+                            .border-width-{0-6}<br><br>
+                            .border-dotted /* border-style: dotted; */<br>
+                            .border-dashed /* border-style: dashed; */<br>
+                            .border-solid &nbsp;/* border-style: solid; */
+                        </code>
+                    </pre>
+                    <h3 class="font-light pb-2 mt-6 border-bottom-silver">Examples</h3>
+                    <pre class="ws-normal font-small m-0 ptb-3">
+                        <code class="html">
+                            &lt;div class=&quot;border-red&quot;&gt;This has a solid red border&lt;/div&gt;
+                        </code>
+                    </pre>
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <div class="box border-red p-2 inline-block font-small">This has a solid red border</div>
+                        </div>
+                    </div>
+                    <pre class="ws-normal font-small m-0 mt-8 ptb-3">
+                        <code class="html">
+                            &lt;div class=&quot;border-bottom-dark-grey border-width-3&quot;&gt;This has a 3px thick solid dark grey border on the bottom&lt;/div&gt;
+                        </code>
+                    </pre>
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <div class="box border-bottom-dark-grey border-width-3 p-2 inline-block font-small">This has a 3px thick solid dark grey border on the bottom</div>
+                        </div>
+                    </div>
+                </section>
+                <section class="section mt-8" id="border-radius">
+                    <h2 class="font-light pb-2 border-bottom-silver">Border Radius</h2>
+                    <p class="font-lora">Use the following classes to add a border radius to your elements 
+                        in a variety of fixed sizes, with a few percentage-based ones.
+                    </p>
+                    <h3 class="font-light pb-2 mt-6 border-bottom-silver">Class List</h3>
+                    <pre class="ws-normal font-small m-0 ptb-3">
+                        <code class="css">
+                            /* adds a border radius in steps between 0rem and 1.5rem */<br>
+                            .border-radius-{0-6}<br><br>
+                            /* adds a border radius of either 25% or 50% */<br>
+                            .border-radius-{quarter|half}
+                        </code>
+                    </pre>
+                    <h3 class="font-light pb-2 mt-6 border-bottom-silver">Examples</h3>
+                    <pre class="ws-normal font-small m-0 ptb-3">
+                        <code class="html">
+                            &lt;a href=&quot;#&quot; class=&quot;inline-block ptb-2 plr-6 font-small color-white bg-blue border-radius-2&quot;&gt;A Rounded Button&lt;/a&gt;
+                        </code>
+                    </pre>
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <a href="#" class="inline-block ptb-2 plr-6 font-small color-white bg-blue border-radius-2">A Rounded Button</a>
+                        </div>
+                    </div>
+                    <pre class="ws-normal font-small m-0 mt-8 ptb-3">
+                        <code class="html">
+                            &lt;span class=&quot;inline-block plr-4 font-x-small color-white bg-grey border-radius-5&quot;&gt;I'm A Tag&lt;/span&gt;
+                        </code>
+                    </pre>
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <span class="inline-block plr-4 font-x-small color-white bg-grey border-radius-5">I'm A Tag</span>
+                        </div>
+                    </div>
+                </section>
+                <section class="section mt-8" id="box-shadow">
+                    <h2 class="font-light pb-2 border-bottom-silver">Box Shadow</h2>
+                    <p class="font-lora">Calcite comes with a variety of classes to add box shadows to your elements 
+                        with varying direction and strength. Each class starts with the prefix <span class="color-red font-monospace">.bs-</span> 
+                        to which a {direction} and {strength} is added on to. There are 9 total directions and 6 total strengths, 
+                        giving you <strong>54</strong> possible box shadow combinations.
+                    </p>
+                    <p class="font-lora">You'll find the directions and strengths in the class list below.</p>
+                    <h3 class="font-light pb-2 mt-6 border-bottom-silver">Class List</h3>
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <pre class="ws-normal font-small m-0 ptb-3">
+                                <code class="css">
+                                    /* shadow falling on the bottom-left */<br>
+                                    .bs-left-close-{strength}<br>
+                                    .bs-left-{strength}<br>
+                                    .bs-left-far-{strength}<br><br>
+                                    /* shadow falling on the bottom-center */<br>
+                                    .bs-center-close-{strength}<br>
+                                    .bs-center-{strength}<br>
+                                    .bs-center-far-{strength}<br><br>
+                                    /* shadow falling on the bottom-right */<br>
+                                    .bs-right-close-{strength}<br>
+                                    .bs-right-{strength}<br>
+                                    .bs-right-far-{strength}<br><br>
+                                </code>
+                            </pre>
+                        </div>
+                        <div class="col-sm-6">
+                            <pre class="ws-normal font-small m-0 ptb-3">
+                                <code class="css">
+                                    .bs-{direction}-very-light /* 5% opacity */<br>
+                                    .bs-{direction}-light &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;/* 15% opacity */<br>
+                                    .bs-{direction}-medium &nbsp;&nbsp;&nbsp;&nbsp;/* 25% opacity */<br>
+                                    .bs-{direction}-dark &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;/* 50% opacity */<br>
+                                    .bs-{direction}-very-dark &nbsp;/* 75% opacity */<br>
+                                    .bs-{direction}-black &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;/* 100% opacity */
+                                </code>
+                            </pre>
+                        </div>
+                    </div>
+                    <h3 class="font-light pb-2 mt-6 border-bottom-silver">Examples</h3>
+                    <pre class="ws-normal font-small m-0 ptb-3">
+                        <code class="html">
+                            &lt;div class=&quot;p-2 font-small bg-white bs-left-far-dark&quot;&gt;This looks like a pretty harsh light is coming from the right and the element is far away from the background.&lt;/div&gt;
+                        </code>
+                    </pre>
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <div class="p-2 font-small bg-white bs-left-far-dark">This looks like a pretty harsh light is coming from the right and the element is far away from the background.</div>
+                        </div>
+                    </div>
+                    <pre class="ws-normal font-small m-0 mt-8 ptb-3">
+                        <code class="html">
+                            &lt;div class=&quot;p-2 font-small bg-white bs-center-close-light&quot;&gt;Soft light is coming from right above and the element is pretty close to the background.&lt;/div&gt;
+                        </code>
+                    </pre>
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <div class="p-2 font-small bg-white bs-center-close-light">Soft light is coming from right above and the element is pretty close to the background.</div>
+                        </div>
+                    </div>
+                </section>
+                <section class="section mt-8" id="animations">
+                    <h2 class="font-light pb-2 border-bottom-silver">Animations</h2>
+                    <p class="font-lora">Included below are a small group of classes that you can use to add CSS 
+                        transitions to your elements. These will activate any time the appropriate styles (opacity, color, anything else) 
+                        change, usually between hover states or when manipulated through JS. Right now all of these utilize 
+                        the <span class="color-red font-monospace">transition</span> property, and all use an 
+                        <span class="color-red font-monospace">ease-in</span> timing curve.
+                    </p>
+                    <h3 class="font-light pb-2 mt-6 border-bottom-silver">Classes</h3>
+                    <pre class="ws-normal font-small m-0 ptb-3">
+                        <code class="css">
+                            .anim-all-very-quick /* transition: all 0.15s ease-in; */<br>
+                            .anim-all-quick &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;/* transition: all 0.25s ease-in; */<br>
+                            .anim-all-moderate &nbsp;&nbsp;/* transition: all 0.4s ease-in; */<br>
+                            .anim-all-slow &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;/* transition: all 0.65s ease-in; */<br>
+                            .anim-all-very-slow &nbsp;/* transition: all 0.85s ease-in; */<br><br>
+                            /* transition: color */<br>
+                            .anim-color-{speed}<br><br>
+                            /* transition: opacity */<br>
+                            .anim-opacity-{speed}<br><br>
+                            /* transition: background-color */<br>
+                            .anim-bg-{speed}
+                        </code>
+                    </pre>
+                    <h3 class="font-light pb-2 mt-6 border-bottom-silver">Examples</h3>
+                    <pre class="ws-normal font-small m-0 ptb-3">
+                        <code class="html">
+                            &lt;a href=&quot;#&quot; class=&quot;p-2 font-small bg-blue hover--bg-blue-dark color-white anim-bg-quick&quot;&gt;Button with Transition&lt;/a&gt;
+                        </code>
+                    </pre>
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <a href="#" class="p-2 font-small bg-blue hover--bg-blue-dark color-white anim-bg-quick">Button with Transition</a>
+                        </div>
+                    </div>
+                </section>
+                <section class="section mt-8" id="box-sizing">
+                    <h2 class="font-light pb-2 border-bottom-silver">Box Sizing</h2>
+                    <p class="font-lora">The CSS box-sizing property is used to alter the default CSS box model used 
+                        to calculate width and height of the elements. Each of these classes applies to both the 
+                        class it's being used on, and <strong>all</strong> child classes. For instance, on this site the 
+                        <span class="font-monospace color-red">.bs-border-box</span> 
+                        class is used on the <span class="font-monospace color-red">&lt;body&gt;</span> tag, and all 
+                        recursive child elements under that body tag have the box-sizing: border-box property applied to them.</p>
+                    <h3 class="font-light pb-2 mt-6 border-bottom-silver">Class List</h3>
+                    <pre class="ws-normal font-small m-0 mb-8 ptb-3">
+                        <code class="css">
+                            /* box-sizing: border-box */<br>
+                            .bs-border-box<br><br>
+                            /* box-sizing: content-box */<br>
+                            .bs-content-box
+                        </code>
+                    </pre>
+                </section>
+            </div>
+        </div>
+    </div>
+    <script src="/dist/js/app.js"></script>
+</body>
+</html>

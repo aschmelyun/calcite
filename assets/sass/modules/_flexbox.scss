@@ -1,0 +1,48 @@
+.flex {
+    display: flex;
+
+    @each $direction in $flex-directions {
+        &.fd-#{$direction} {
+            flex-direction: $direction;
+        }
+    }
+
+    @each $wrap in $flex-wraps {
+        &.fw-#{$wrap} {
+            flex-wrap: $wrap;
+        }
+    }
+
+    @each $justification in $flex-justifications {
+        &.jc-#{$justification} {
+            justify-content: $justification;
+        }
+    }
+
+    @each $aligner in $flex-item-aligners {
+        &.ai-#{$aligner} {
+            align-items: $aligner;
+        }
+    }
+
+    @each $aligner in $flex-content-aligners {
+        &.ac-#{$aligner} {
+            align-content: $aligner;
+        }
+    }
+
+    @for $i from 1 through $flex-max-order-grow-shrink {
+        .order-#{$i} {
+            order: $i;
+        }
+        .grow-#{$i} {
+            flex-grow: $i;
+        }
+        .shrink-#{$i} {
+            flex-shrink: $i;
+        }
+        .flex-#{$i} {
+            flex: $i;
+        }
+    }
+}

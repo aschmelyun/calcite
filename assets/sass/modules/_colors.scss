@@ -1,0 +1,40 @@
+@each $name, $color in $base-colors {
+    .color-#{$name} {
+        color: $color;
+    }
+    .color-#{$name}-light {
+        color: lighten($color, $lighten-color-percent);
+    }
+    .color-#{$name}-dark {
+        color: darken($color, $darken-color-percent);
+    }
+    .hover--color-#{$name} {
+
+        &:hover {
+            color: $color;
+        }
+    }
+    .hover--color-#{$name}-light {
+
+        &:hover {
+            color: lighten($color, $lighten-color-percent);
+        }
+    }
+    .hover--color-#{$name}-dark {
+
+        &:hover {
+            color: darken($color, $darken-color-percent);
+        }
+    }
+}
+@each $name, $color in $additional-colors {
+    .color-#{$name} {
+        color: $color;
+    }
+    .hover--color-#{$name} {
+
+        &:hover {
+            color: $color;
+        }
+    }
+}

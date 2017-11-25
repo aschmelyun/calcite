@@ -1,0 +1,37 @@
+@each $name, $color in $base-colors {
+    .border-#{$name} {
+        border: 1px solid $color;
+    }
+    @each $direction in (left, right, bottom, top) {
+        .border-#{$direction}-#{$name} {
+            border-#{$direction}: 1px solid $color;
+        }
+    }
+}
+
+@each $name, $color in $additional-colors {
+    .border-#{$name} {
+        border: 1px solid $color;
+    }
+    @each $direction in (left, right, bottom, top) {
+        .border-#{$direction}-#{$name} {
+            border-#{$direction}: 1px solid $color;
+        }
+    }
+}
+
+@each $suffix, $width in $border-widths {
+    .border-width-#{$suffix} {
+        border-width: $width;
+    }
+}
+
+.border-dotted {
+    border-style: dotted;
+}
+.border-dashed {
+    border-style: dashed;
+}
+.border-solid {
+    border-style: solid;
+}

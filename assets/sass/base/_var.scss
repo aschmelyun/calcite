@@ -1,0 +1,291 @@
+/*
+ * Spacing
+ */
+$spacing-0: 0rem;
+$spacing-1: 0.25rem;
+$spacing-2: 0.5rem;
+$spacing-3: 0.75rem;
+$spacing-4: 1rem;
+$spacing-5: 1.25rem;
+$spacing-6: 1.5rem;
+$spacing-7: 2rem;
+$spacing-8: 2.5rem;
+$spacing-9: 3rem;
+$spacing-10: 4rem;
+
+$margins: (
+    0: $spacing-0,
+    1: $spacing-1,
+    2: $spacing-2,
+    3: $spacing-3,
+    4: $spacing-4,
+    5: $spacing-5,
+    6: $spacing-6,
+    7: $spacing-7,
+    8: $spacing-8,
+    9: $spacing-9,
+    10: $spacing-10
+);
+
+$paddings: (
+    0: $spacing-0,
+    1: $spacing-1,
+    2: $spacing-2,
+    3: $spacing-3,
+    4: $spacing-4,
+    5: $spacing-5,
+    6: $spacing-6,
+    7: $spacing-7,
+    8: $spacing-8,
+    9: $spacing-9,
+    10: $spacing-10
+);
+
+/*
+ * Colors
+ */
+ $base-colors: (
+    navy: #001F3F,
+    blue: #0074D9,
+    aqua: #7fDBFF,
+    teal: #39CCCC,
+    olive: #3D9970,
+    green: #2ECC40,
+    lime: #01FF70,
+    yellow: #FFDC00,
+    orange: #FF851B,
+    red: #FF4136,
+    maroon: #85144B,
+    fuchsia: #F012BE,
+    purple: #B10DC9,
+    dark-grey: #111,
+    grey: #AAA,
+    silver: #DDD
+);
+$additional-colors: (
+    black: #000,
+    white: #fff,
+
+    very-clear-black: rgba(0,0,0,0.10),
+    semi-clear-black: rgba(0,0,0,0.25),
+    half-clear-black: rgba(0,0,0,0.5),
+    barely-clear-black: rgba(0,0,0,0.85),
+
+    very-clear-white: rgba(255,255,255,0.10),
+    semi-clear-white: rgba(255,255,255,0.25),
+    half-clear-white: rgba(255,255,255,0.5),
+    barely-clear-white: rgba(255,255,255,0.85)
+);
+
+$lighten-color-percent: 10%;
+$darken-color-percent: 10%;
+
+/*
+ * Fonts
+ */
+$font-sizes: (
+    x-small: 0.75rem,
+    small: 0.88rem,
+    regular: 1.0rem,
+    large: 1.25rem,
+    x-large: 1.5rem,
+);
+$letter-spaces: (
+    0: 0px,
+    1: 0.5px,
+    2: 1px,
+    3: 1.5px,
+    4: 2px,
+    5: 2.5px,
+    6: 3px
+);
+$line-heights: (
+    0: 0rem,
+    1: 1rem,
+    2: 1.25rem,
+    3: 1.5rem,
+    4: 1.75rem,
+    5: 2rem,
+    6: 2.5rem,
+    normal: normal,
+    tiny: 0.5rem,
+    huge: 3rem,
+);
+$font-weight-bold: 700;
+$font-weight-normal: 400;
+$font-weight-light: 300;
+
+/*
+ * Flexbox
+ */
+$flex-directions: row, row-reverse, column, column-reverse;
+$flex-wraps: nowrap, wrap, wrap-reverse;
+$flex-justifications: flex-start, flex-end, center, space-between, space-around, space-evenly;
+$flex-item-aligners: flex-start, flex-end, center, baseline, stretch;
+$flex-content-aligners: flex-start, flex-end, center, space-between, space-around, stretch;
+$flex-max-order-grow-shrink: 12;
+
+/*
+ * Positioning
+ */
+$positions: (
+    fixed,
+    absolute,
+    relative,
+    static
+);
+$movements: (
+    0: 0,
+    1: 0.5rem,
+    2: 1rem,
+    3: 1.5rem,
+    4: 2rem,
+    5: 2.5rem,
+    6: 3rem,
+    7: 3.5rem,
+    8: 4rem
+);
+
+/*
+ * Sizing
+ */
+$fixed-sizes: (
+    1: 0.5rem,
+    2: 1rem,
+    3: 1.5rem,
+    4: 2rem,
+    5: 2.5rem,
+    6: 3rem,
+    7: 3.5rem,
+    8: 4rem,
+    9: 4.5rem,
+    10: 5rem
+);
+
+$percent-sizes: (
+    5: 5%,
+    10: 10%,
+    15: 15%,
+    20: 20%,
+    25: 25%,
+    quarter: 25%,
+    30: 30%,
+    35: 35%,
+    40: 40%,
+    45: 45%,
+    50: 50%,
+    half: 50%,
+    55: 55%,
+    60: 60%,
+    65: 65%,
+    70: 70%,
+    75: 75%,
+    three-quarters: 75%,
+    80: 80%,
+    85: 85%,
+    90: 90%,
+    95: 95%,
+    100: 100%,
+    full: 100%
+);
+
+/*
+ * Lists
+ */
+$list-styles: (
+    disc,
+    circle,
+    decimal,
+    lower-alpha,
+    lower-roman,
+    upper-alpha,
+    upper-roman,
+    none,
+    square
+);
+$list-style-positions: (
+    inside,
+    outside
+);
+
+/*
+ * Borders
+ */
+$border-widths: (
+    0: 0px,
+    1: 1px,
+    2: 2px,
+    3: 3px,
+    4: 4px,
+    5: 5px,
+    6: 6px
+);
+
+/*
+ * Border Radius
+ */
+$radii: (
+    0: $spacing-0,
+    1: $spacing-1,
+    2: $spacing-2,
+    3: $spacing-3,
+    4: $spacing-4,
+    5: $spacing-5,
+    6: $spacing-6
+);
+
+/*
+ * Box Shadow
+ */
+ $box-shadow-directions: (
+     left-close: -2px 2px 4px,
+     left: -4px 4px 7px,
+     left-far: -8px 8px 14px,
+     right-close: 2px 2px 4px,
+     right: 4px 4px 7px,
+     right-far: 8px 8px 14px,
+     center-close: 0px 2px 4px,
+     center: 0px 4px 7px,
+     center-far: 0px 8px 14px
+ );
+ $box-shadow-strengths: (
+     very-light: rgba(0,0,0,0.05),
+     light: rgba(0,0,0,0.15),
+     medium: rgba(0,0,0,0.25),
+     dark: rgba(0,0,0,0.5),
+     very-dark: rgba(0,0,0,0.75),
+     black: rgba(0,0,0,1.0)
+ );
+
+/*
+ * Backgrounds
+ */
+ $bg-positions: (
+    left-top: left top,
+    left-center: left center,
+    left-bottom: left bottom,
+    right-top: right top,
+    right-center: right center,
+    right-bottom: right bottom,
+    center-top: center top,
+    center-center: center center,
+    center-bottom: center bottom
+ );
+ $bg-attachments: scroll, fixed, local;
+
+/*
+ * Animations
+ */
+ $animations: (
+    very-quick: 0.15s ease-in,
+    quick: 0.25s ease-in,
+    moderate: 0.4s ease-in,
+    slow: 0.65s ease-in,
+    very-slow: 0.85s ease-in
+);
+
+/*
+ * Fonts
+ */
+$font-family-primary: "Open Sans", sans-serif;
+

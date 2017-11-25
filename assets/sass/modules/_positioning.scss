@@ -1,0 +1,36 @@
+.inline {
+    display: inline;
+}
+.inline-block {
+    display: inline-block;
+}
+.block {
+    display: block;
+}
+.float-left {
+    float: left;
+}
+.float-right {
+    float: right;
+}
+.clearfix {
+
+    &:after {
+        content: '';
+        display: table;
+        clear: both;
+    }
+}
+@each $position in $positions {
+    .pos-#{$position} {
+        position: $position;
+    }
+}
+@each $suffix, $amount in $movements {
+    
+    @each $direction in (top, left, right, bottom) {
+        .pos-#{$direction}-#{$suffix} {
+            $direction: $amount;
+        }
+    }
+}
