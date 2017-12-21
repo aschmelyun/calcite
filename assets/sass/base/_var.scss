@@ -1,45 +1,36 @@
 /*
  * Spacing
  */
-$spacing-0: 0rem;
-$spacing-1: 0.25rem;
-$spacing-2: 0.5rem;
-$spacing-3: 0.75rem;
-$spacing-4: 1rem;
-$spacing-5: 1.25rem;
-$spacing-6: 1.5rem;
-$spacing-7: 2rem;
-$spacing-8: 2.5rem;
-$spacing-9: 3rem;
-$spacing-10: 4rem;
-
-$margins: (
-    0: $spacing-0,
-    1: $spacing-1,
-    2: $spacing-2,
-    3: $spacing-3,
-    4: $spacing-4,
-    5: $spacing-5,
-    6: $spacing-6,
-    7: $spacing-7,
-    8: $spacing-8,
-    9: $spacing-9,
-    10: $spacing-10
+$spacings: (
+    0: 0rem,
+    1: 0.25rem,
+    2: 0.5rem,
+    3: 0.75rem,
+    4: 1rem,
+    5: 1.25rem,
+    6: 1.5rem,
+    7: 1.75rem,
+    8: 2rem,
+    9: 2.5rem,
+    10: 3rem,
+    11: 3.5rem,
+    12: 4rem,
+    13: 4.5rem,
+    14: 5rem,
+    15: 5.5rem,
+    16: 6rem,
+    17: 6.5rem,
+    18: 7rem,
+    19: 7.5rem,
+    20: 8rem,
+    21: 8.5rem,
+    22: 9rem,
+    23: 9.9rem,
+    24: 10rem
 );
 
-$paddings: (
-    0: $spacing-0,
-    1: $spacing-1,
-    2: $spacing-2,
-    3: $spacing-3,
-    4: $spacing-4,
-    5: $spacing-5,
-    6: $spacing-6,
-    7: $spacing-7,
-    8: $spacing-8,
-    9: $spacing-9,
-    10: $spacing-10
-);
+$margins: $spacings;
+$paddings: $spacings;
 
 /*
  * Colors
@@ -89,6 +80,7 @@ $font-sizes: (
     regular: 1.0rem,
     large: 1.25rem,
     x-large: 1.5rem,
+    xx-large: 2rem
 );
 $letter-spaces: (
     0: 0px,
@@ -225,13 +217,13 @@ $border-widths: (
  * Border Radius
  */
 $radii: (
-    0: $spacing-0,
-    1: $spacing-1,
-    2: $spacing-2,
-    3: $spacing-3,
-    4: $spacing-4,
-    5: $spacing-5,
-    6: $spacing-6
+    0: 0rem,
+    1: 0.25rem,
+    2: 0.5rem,
+    3: 0.75rem,
+    4: 1rem,
+    5: 1.5rem,
+    6: 2rem
 );
 
 /*
