@@ -30,12 +30,7 @@
     
     @each $direction in (top, left, right, bottom) {
         .pos-#{$direction}-#{$suffix} {
-            $direction: $amount;
+            #{$direction}: $amount;
         }
-    }
-}
-@each $suffix, $amount in $movements {
-    .pos-testing-#{$suffix} {
-        bottom: $amount;
     }
 }
