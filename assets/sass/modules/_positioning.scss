@@ -34,3 +34,8 @@
         }
     }
 }
+@each $suffix, $amount in $movements {
+    .pos-testing-#{$suffix} {
+        bottom: $amount;
+    }
+}
