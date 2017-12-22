@@ -252,23 +252,34 @@ $radii: (
  * Box Shadow
  */
  $box-shadow-directions: (
-     left-close: -2px 2px 4px,
-     left: -4px 4px 7px,
-     left-far: -8px 8px 14px,
-     right-close: 2px 2px 4px,
-     right: 4px 4px 7px,
-     right-far: 8px 8px 14px,
-     center-close: 0px 2px 4px,
-     center: 0px 4px 7px,
-     center-far: 0px 8px 14px
+    left-close: -2px 2px 4px,
+    left: -4px 4px 7px,
+    left-far: -8px 8px 14px,
+    right-close: 2px 2px 4px,
+    right: 4px 4px 7px,
+    right-far: 8px 8px 14px,
+    center-close: 0px 2px 4px,
+    center: 0px 4px 7px,
+    center-far: 0px 8px 14px
+ );
+ $text-shadow-directions: (
+    left-close: -1px 1px 2px,
+    left: -2px 2px 4px,
+    left-far: -5px 5px 9px,
+    right-close: 1px 1px 2px,
+    right: 2px 2px 4px,
+    right-far: 5px 5px 9px,
+    center-close: 0px 1px 2px,
+    center: 0px 2px 4px,
+    center-far: 0px 5px 9px
  );
  $box-shadow-strengths: (
-     very-light: rgba(0,0,0,0.05),
-     light: rgba(0,0,0,0.15),
-     medium: rgba(0,0,0,0.25),
-     dark: rgba(0,0,0,0.5),
-     very-dark: rgba(0,0,0,0.75),
-     black: rgba(0,0,0,1.0)
+    very-light: rgba(0,0,0,0.05),
+    light: rgba(0,0,0,0.15),
+    medium: rgba(0,0,0,0.25),
+    dark: rgba(0,0,0,0.5),
+    very-dark: rgba(0,0,0,0.75),
+    black: rgba(0,0,0,1.0)
  );
 
 /*
