@@ -34,3 +34,8 @@
         }
     }
 }
+@each $suffix, $amount in $z-indices {
+    .zi-#{$suffix} {
+        z-index: $amount;
+    }
+}
