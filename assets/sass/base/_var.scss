@@ -344,3 +344,19 @@ $z-indices: (
     massive: 9999,
     max: 2147483647
 );
+
+/*
+ * Pointer Events
+ */
+$pointer-events: (
+    auto: auto,
+    none: none,
+    visible: visible,
+    painted: painted,
+    fill: fill,
+    stroke: stroke,
+    all: all,
+    inherit: inherit,
+    initial: initial,
+    unset: unset
+);

@@ -1,0 +1,5 @@
+@each $suffix, $events in $pointer-events {
+    .pointers-#{$suffix} {
+        pointer-events: $events;
+    }
+}
