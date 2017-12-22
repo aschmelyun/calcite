@@ -16,14 +16,29 @@
     }
 }
 
+.font-black {
+    font-weight: $font-weight-black;
+}
+.font-xbold {
+    font-weight: $font-weight-xbold;
+}
 .font-bold {
     font-weight: $font-weight-bold;
+}
+.font-semibold {
+    font-weight: $font-weight-semibold;
+}
+.font-medium {
+    font-weight: $font-weight-medium;
 }
 .font-normal {
     font-weight: $font-weight-normal;
 }
 .font-light {
     font-weight: $font-weight-light;
+}
+.font-xlight {
+    font-weight: $font-weight-xlight;
 }
 .font-italic {
     font-style: italic;
