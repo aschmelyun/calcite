@@ -43,14 +43,14 @@
             <div class="col-sm-6">
                 <div class="logo">
                     <span>Calcite</span>
-                    <span class="font-x-small font-normal color-barely-clear-white font-lowercase pt-3 ml-2">v0.2.0</span>
+                    <span class="font-x-small font-normal color-barely-clear-white font-lowercase pt-3 ml-2">v0.2.1</span>
                 </div>
             </div>
             <nav class="col-sm-6 navbar">
                 <ul class="ls-none flex jc-flex-end ai-center mtb-2">
                     <li><a href="#" class="color-barely-clear-white font-small hover--color-white">GitHub</a></li>
                     <li class="ml-6"><a href="#" class="color-barely-clear-white font-small hover--color-white">Documentation</a></li>
-                    <li class="ml-4"><a href="#" class="inline-block bg-very-clear-white border-radius-1 color-barely-clear-white plr-4 ptb-2 font-small hover--bg-semi-clear-white hover--color-white">Download</a></li>
+                    <li class="ml-4"><a href="https://github.com/aschmelyun/calcite/raw/master/dist/css/calcite.css" class="inline-block bg-very-clear-white border-radius-1 color-barely-clear-white plr-4 ptb-2 font-small hover--bg-semi-clear-white hover--color-white">Download</a></li>
                 </ul>
             </nav>
         </div>
@@ -62,10 +62,10 @@
                     <ul class="ls-none">
                         <li><a class="font-bold color-dark-grey hover--color-red" href="#overview">Overview</a></li>
                         <ul class="ls-none border-left-silver pl-3 ml-5 mt-1">
-                            <li><a href="#installation" class="color-dark-grey hover--color-red">Installation</a></li>
                             <li><a href="#usage" class="color-dark-grey hover--color-red">Usage</a></li>
+                            <li><a href="#installation" class="color-dark-grey hover--color-red">Installation</a></li>
+                            <li><a href="#compiling-scss" class="color-dark-grey hover--color-red">Compiling SCSS</a></li>
                             <li><a href="#variables" class="color-dark-grey hover--color-red">Variables</a></li>
-                            <li><a href="#compiling-sass" class="color-dark-grey hover--color-red">Compiling Sass</a></li>
                         </ul>
                         <li class="mt-3"><a class="font-bold color-dark-grey hover--color-red" href="#layout">Layout</a></li>
                         <ul class="ls-none border-left-silver pl-3 ml-5 mt-1">
@@ -92,6 +92,53 @@
                 </nav>
             </div>
             <div class="col-sm-9 mt-2 color-dark-grey">
+                <h1 class="font-light" id="overview">Overview</h1>
+                <section class="section mt-6" id="usage">
+                    <h2 class="font-light pb-2 border-bottom-silver">Usage</h2>
+                    <p class="line-height-4 font-lora">Calcite is a <strong>low-level utility CSS framework</strong>, designed to help you 
+                        get a website or web-app prototype up and running in as little time as possible, without needing to build 
+                        or edit a lot of CSS classes.</p>
+                    <p class="line-height-4 font-lora">Being low-level means that the modifications that each class does are 
+                        very simple, and usually contained within that class alone. For instance, in a typical CSS framework you 
+                        might have been given a class called <span class="font-monospace color-red">button</span>, which by default has rounded edges, a blue background, 
+                        white text, and bolded 14px font. If you wanted to make changes to all (or just one) of those buttons, you would need 
+                        to override those class properties in a custom stylesheet. With Calcite, there is no such default. If you 
+                        wanted to replicate that behavior you might add the classes <span class="font-monospace color-red">border-radius-2 background-blue color-white 
+                        font-small font-bold</span> to your button element. That way each style is modular, independent from the whole 
+                        and can be changed on a per-element basis to fit your needs.</p>
+                </section>
+                <section class="section mt-6" id="installation">
+                        <h2 class="font-light pb-2 border-bottom-silver">Installation</h2>
+                        <p class="line-height-4 font-lora">Getting Calcite is super easy. You can download the up-to-date minified CSS file
+                            directly using <a href="https://github.com/aschmelyun/calcite/raw/master/dist/css/calcite.css">this link</a> 
+                            or the download button at the top of this page.</p>
+                        <p class="line-height-4 font-lora">If you're using NPM, you can run npm install calcite to 
+                            get the entire latest package. From there, you can include the minified CSS file located 
+                            under <span class="font-monospace color-grey">/dist/css/</span> or extend on the source SCSS files located at <span class="font-monospace color-grey">/assets/sass/</span>.
+                        </p>
+                </section>
+                <section class="section mt-6" id="compiling-scss">
+                    <h2 class="font-light pb-2 border-bottom-silver">Compiling SCSS</h2>
+                    <p class="line-height-4 font-lora">If you'd like to tinker with the source of Calcite, getting 
+                        started is super easy! Everything is compiled through Laravel's mix wrapper for webpack. 
+                        After cloning the github repo, open a terminal and dive into the parent folder. Once there, 
+                        just run <span class="font-monospace color-red">npm install && npm run watch</span>. This should spin up a local server and open up a 
+                        browser window on your localhost.</p>
+                    <p class="line-height-4 font-lora">Browsersync is included and will watch for changes on the source 
+                        SCSS files, recompiling and injecting the them into your opened browser. Before you finish up, run 
+                        <span class="font-monospace color-red">npm run production</span> to get a minified CSS file that includes your changes.
+                    </p>
+                </section>
+                <section class="section mt-6 mb-10" id="variables">
+                    <h2 class="font-light pb-2 border-bottom-silver">Variables</h2>
+                    <p class="line-height-4 font-lora">Most of Calcite's styles are all manipulatable through 
+                        a main <span class="font-monospace color-red">_var.scss</span> file located in the <span class="font-monospace color-grey">/assets/sass/base/</span> folder of the repo. The bulk of these 
+                        variables are laid out in Sass maps, akin to associative arrays. The data being represented by a  
+                        <i>class_name: data_value</i> structure. For instance, under <span class="font-monospace color-red">$font-sizes</span> you'll see a line for 
+                        <span class="font-monospace color-grey">small: 0.88rem</span>, where 'small' is used in <span class="font-monospace color-grey">modules/_fonts.scss</span> to create the class "font-small" with
+                        a value of font-size: 0.88rem;
+                    </p>
+                </section>
                 <h1 class="font-light" id="layout">Layout</h1>
                 <section class="section mt-6" id="grid">
                     <h2 class="font-light pb-2 border-bottom-silver">Grid</h2>

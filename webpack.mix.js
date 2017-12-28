@@ -9,9 +9,6 @@ mix.sass('assets/sass/calcite.scss', './dist/css')
 
 //mix.browserSync();
 mix.browserSync({
-    proxy: 'http://calcite.dev',
-    host: 'calcite.dev',
-    open: 'external',
     files: [
         'index.html',
         'dist/css/*.css'
