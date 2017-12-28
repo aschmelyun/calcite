@@ -1,6 +1,6 @@
 {
   "name": "calcite",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "A front-end framework for rapid web development and prototyping",
   "main": "index.js",
   "scripts": {
@@ -31,7 +31,7 @@
   "bugs": {
     "url": "https://github.com/aschmelyun/calcite/issues"
   },
-  "homepage": "https://github.com/aschmelyun/calcite#readme",
+  "homepage": "https://calcite.aschmelyun.com",
   "devDependencies": {
     "browser-sync": "^2.18.13",
     "browser-sync-webpack-plugin": "^1.2.0",
@@ -39,9 +39,7 @@
     "flexboxgrid": "^6.3.1",
     "font-awesome": "^4.7.0",
     "laravel-mix": "^1.5.1",
-    "normalize.css": "^7.0.0"
-  },
-  "dependencies": {
+    "normalize.css": "^7.0.0",
     "highlightjs": "^9.10.0"
   }
 }
