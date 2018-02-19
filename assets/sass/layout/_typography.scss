@@ -4,6 +4,7 @@ body {
 }
 body {
     line-height: 1.5rem;
+    font-family: $font-family-primary;
 }
 @for $i from 1 through 6 {
     h#{$i} {
