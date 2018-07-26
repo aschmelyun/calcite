@@ -1,6 +1,6 @@
 {
   "name": "calcite",
-  "version": "0.2.4",
+  "version": "0.3.0",
   "description": "A front-end framework for rapid web development and prototyping",
   "main": "index.js",
   "scripts": {

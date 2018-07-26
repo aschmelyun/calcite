@@ -1,14 +1,14 @@
 @each $suffix, $animation in $animations {
-    .anim-color-#{$suffix} {
+    .tr-color-#{$suffix} {
         transition: color $animation;
     }
-    .anim-opacity-#{$suffix} {
+    .tr-opacity-#{$suffix} {
         transition: opacity $animation;
     }
-    .anim-bg-#{$suffix} {
+    .tr-bg-#{$suffix} {
         transition: background-color $animation;
     }
-    .anim-all-#{$suffix} {
+    .tr-all-#{$suffix} {
         transition: all $animation;
     }
 }

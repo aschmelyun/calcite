@@ -1,17 +1,17 @@
 @each $suffix, $size in $fixed-sizes {
-    .width-fixed-#{$suffix} {
+    .wf-#{$suffix} {
         width: $size;
     }
-    .height-fixed-#{$suffix} {
+    .hf-#{$suffix} {
         height: $size;
     }
 }
 
 @each $suffix, $size in $percent-sizes {
-    .width-#{$suffix} {
+    .w-#{$suffix} {
         width: $size;
     }
-    .height-#{$suffix} {
+    .h-#{$suffix} {
         height: $size;
     }
 }

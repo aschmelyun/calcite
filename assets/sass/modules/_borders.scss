@@ -1,19 +1,19 @@
 @each $name, $color in $base-colors {
-    .border-#{$name} {
+    .bdr-#{$name} {
         border: 1px solid $color;
 
         @each $style in (dotted, dashed, solid) {
-            &.border-#{$style} {
+            &.bdr-#{$style} {
                 border-style: $style;
             }
         }
     }
     @each $direction in (left, right, bottom, top) {
-        .border-#{$direction}-#{$name} {
+        .bdr-#{$direction}-#{$name} {
             border-#{$direction}: 1px solid $color;
 
             @each $style in (dotted, dashed, solid) {
-                &.border-#{$style} {
+                &.bdr-#{$style} {
                     border-#{$direction}-style: $style;
                 }
             }
@@ -22,18 +22,18 @@
 }
 
 @each $name, $color in $additional-colors {
-    .border-#{$name} {
+    .bdr-#{$name} {
         border: 1px solid $color;
     }
     @each $direction in (left, right, bottom, top) {
-        .border-#{$direction}-#{$name} {
+        .bdr-#{$direction}-#{$name} {
             border-#{$direction}: 1px solid $color;
         }
     }
 }
 
 @each $suffix, $width in $border-widths {
-    .border-width-#{$suffix} {
+    .bw-#{$suffix} {
         border-width: $width;
     }
 }

@@ -1,63 +1,63 @@
 @each $name, $size in $font-sizes {
-    .font-#{$name} {
+    .fs-#{$name} {
         font-size: $size;
     }
 }
 
 @each $suffix, $spacing in $letter-spaces {
-    .letter-space-#{$suffix} {
+    .ls-#{$suffix} {
         letter-spacing: $spacing;
     }
 }
 
 @each $suffix, $height in $line-heights {
-    .line-height-#{$suffix} {
+    .lh-#{$suffix} {
         line-height: $height;
     }
 }
 
-.font-black {
+.fw-black {
     font-weight: $font-weight-black;
 }
-.font-xbold {
+.fw-xbold {
     font-weight: $font-weight-xbold;
 }
-.font-bold {
+.fw-bold {
     font-weight: $font-weight-bold;
 }
-.font-semibold {
+.fw-semibold {
     font-weight: $font-weight-semibold;
 }
-.font-medium {
+.fw-medium {
     font-weight: $font-weight-medium;
 }
-.font-normal {
+.fw-normal {
     font-weight: $font-weight-normal;
 }
-.font-light {
+.fw-light {
     font-weight: $font-weight-light;
 }
-.font-xlight {
+.fw-xlight {
     font-weight: $font-weight-xlight;
 }
-.font-italic {
+.fs-italic {
     font-style: italic;
 }
-.font-underline {
+.td-underline {
     text-decoration: underline;
 }
-.font-strikeout {
+.td-strikeout {
     text-decoration: line-through;
 }
-.font-uppercase {
+.tt-uppercase {
     text-transform: uppercase;
 }
-.font-lowercase {
+.tt-lowercase {
     text-transform: lowercase;
 }
-.font-capitalize {
+.tt-capitalize {
     text-transform: capitalize;
 }
-.font-monospace {
+.ff-monospace {
     font-family: monospace;
 }
